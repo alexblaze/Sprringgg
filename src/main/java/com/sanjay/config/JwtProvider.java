@@ -1,4 +1,4 @@
-package com.ecomm.config;
+package com.sanjay.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

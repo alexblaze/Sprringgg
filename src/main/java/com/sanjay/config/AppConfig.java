@@ -1,4 +1,4 @@
-package com.ecomm.config;
+package com.sanjay.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;

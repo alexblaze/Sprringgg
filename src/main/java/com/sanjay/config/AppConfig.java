@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
-@EnableWebMvc
+
 public class AppConfig {
 
     @Bean

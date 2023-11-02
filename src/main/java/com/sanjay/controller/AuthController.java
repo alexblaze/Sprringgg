@@ -39,10 +39,6 @@ public class AuthController {
 this.jwtProvider = jwtProvider;
     }
 
-
-
-
-
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user)throws UserException{
         String email = user.getEmail();
@@ -92,7 +88,7 @@ this.jwtProvider = jwtProvider;
 
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(token);
-        authResponse.setMessage("Signin SUccess");
+        authResponse.setMessage("Signin Success");
 
         return new ResponseEntity<AuthResponse>(authResponse, HttpStatus.CREATED);
 

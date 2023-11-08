@@ -25,10 +25,12 @@ public class CartItem {
     private Integer price;
     private  Integer discountedPrice;
 
+    private Long userId;
+
     public CartItem() {
     }
 
-    public CartItem(Long id, Cart cart, Product product, String size, int quantity, Integer price, Integer discountedPrice) {
+    public CartItem(Long id, Cart cart, Product product, String size, int quantity, Integer price, Integer discountedPrice, Long userId) {
         this.id = id;
         this.cart = cart;
         this.product = product;
@@ -36,6 +38,7 @@ public class CartItem {
         this.quantity = quantity;
         this.price = price;
         this.discountedPrice = discountedPrice;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -92,5 +95,13 @@ public class CartItem {
 
     public void setDiscountedPrice(Integer discountedPrice) {
         this.discountedPrice = discountedPrice;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

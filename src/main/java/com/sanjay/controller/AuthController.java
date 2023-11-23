@@ -6,6 +6,7 @@ import com.sanjay.model.User;
 import com.sanjay.repository.UserRepository;
 import com.sanjay.request.LoginRequest;
 import com.sanjay.response.AuthResponse;
+import com.sanjay.service.CartService;
 import com.sanjay.service.CustomeUserServiceImplementation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,10 +33,13 @@ public class AuthController {
 
     private PasswordEncoder passwordEncoder;
 
-    public AuthController(UserRepository userRepository,JwtProvider jwtProvider, CustomeUserServiceImplementation customUserService, PasswordEncoder passwordEncoder) {
+    private CartService cartService;
+
+    public AuthController(UserRepository userRepository, CartService cartService,JwtProvider jwtProvider, CustomeUserServiceImplementation customUserService, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.customUserService = customUserService;
         this.passwordEncoder = passwordEncoder;
+        this.cartService =cartService;
 this.jwtProvider = jwtProvider;
     }
 

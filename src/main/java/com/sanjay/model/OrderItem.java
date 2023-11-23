@@ -1,5 +1,6 @@
 package com.sanjay.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -10,6 +11,11 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @JsonIgnore
+    @ManyToOne
+    private Order order;
+
   @ManyToOne
   private Product product;
 
@@ -29,15 +35,24 @@ public class OrderItem {
     public OrderItem() {
     }
 
-    public OrderItem(Long id, Product product, String size, int quantity, Integer price, Integer discountedPrice, Long userId, LocalDateTime deliveryDate) {
+    public OrderItem(Long id, Product product, String size, int quantity, Integer price,Order order, Integer discountedPrice, Long userId, LocalDateTime deliveryDate) {
         this.id = id;
         this.product = product;
         this.size = size;
         this.quantity = quantity;
+        this.order=order;
         this.price = price;
         this.discountedPrice = discountedPrice;
         this.userId = userId;
         this.deliveryDate = deliveryDate;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public Long getId() {

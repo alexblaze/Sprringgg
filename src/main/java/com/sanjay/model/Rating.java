@@ -28,8 +28,10 @@ public class Rating {
 
     private LocalDateTime createdAt;
 
-    public Rating(Long id) {
-        this.id = id;
+
+
+    public Rating() {
+
     }
 
     public Long getId() {
